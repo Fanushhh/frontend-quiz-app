@@ -65,6 +65,7 @@ function Quiz() {
           return (
             <div key={crypto.randomUUID()}>
               <button
+              style={{borderColor: isSubmitted && answer === option ? 'var(--green)' : isSubmitted && answerInputRef.current === option ? 'var(--red)' : ''}}
                 className={styles.categoryWrapper}
                 onClick={() => {
                   answerInputRef.current = option;

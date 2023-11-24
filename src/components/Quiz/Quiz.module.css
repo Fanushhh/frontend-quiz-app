@@ -72,15 +72,25 @@
     background-color:var(--white);
     display: flex;
     align-items: center;
+    justify-content: start;
     gap:1rem;
     width: 564px;
     padding:20px;
     box-shadow: 0 16px 40px 0 rgba(0,0,0,0.1);
     border-radius: 15px;
     text-align: left;
-    
-}
+    color:var(--dark-blue);
 
+}
+.categoryWrapper img{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right:0;
+}
+.categoryWrapper h2{
+    max-width: 450px;
+}
 
 .submitButton:hover{
     opacity: 0.7;
@@ -89,8 +99,9 @@ img{
     border-radius: 10px;
     padding:4px;
 }
-.categoryWrapper:focus{
+.categoryWrapper:focus, .categoryWrapper:hover{
     outline: 3px solid var(--violet);
+    opacity:1;
 }
 
 .categoryWrapper:hover .orderedOption{
@@ -101,6 +112,8 @@ img{
     background-color: var(--violet);
     color:white;
 }
+
+
 @media screen and (max-width:1000px){
     .heroWrapper{
         flex-direction: column;
@@ -119,6 +132,10 @@ img{
     .submitButton{
         width: 100%;
     }
+    .categoryWrapper h2{
+        font-size: 18px;
+        max-width: 450px;
+    }
     
 }
 
@@ -133,7 +150,11 @@ img{
         padding:16px;
         font-size: var(--body-M);
     }
+    .categoryWrapper{
+        padding:8px 16px;
+    }
     .categoryWrapper h2{
         font-size: 18px;
+        max-width: 220px;
     }
 }
