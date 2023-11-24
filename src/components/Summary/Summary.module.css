@@ -1,0 +1,103 @@
+.summaryWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary{
+    width: 100%;
+    max-width: 460px;
+    font-size: var(--heading-L);
+    line-height: 100%;
+    font-weight: 700;
+}
+.summary h1{
+    font-size:60px;
+    line-height: 100%;
+    font-weight: 400;
+}
+.summaryWrapper aside{
+    width: 100%;
+    max-width: 564px;
+    display: flex;
+    flex-direction: column;
+}
+.summaryWrapper aside button{
+    background-color: var(--violet);
+    padding:32px 16px;
+    font-size: var(--heading-M);
+    color:var(--white);
+    border-radius: 15px;
+}
+aside button:hover{
+    opacity: 0.7;
+}
+.resultCard{
+    background-color: var(--white);
+    padding: 2rem;
+    
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap:40px;
+}
+
+.categoryResult{
+    display:flex;
+    align-items: center;
+    gap:1rem;
+    font-size:var(--heading-S);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.summaryWrapper h2{
+    font-size:var(--heading-XL);
+    line-height: 100%;
+}
+
+@media screen and (max-width:1000px){
+    .summaryWrapper{
+        flex-direction: column;
+        align-items: center;
+        gap:2rem;
+        padding:64px;
+    }
+    .summaryWrapper aside{
+        width: 100%;
+        max-width: 100%;
+    }
+    .summary{
+        max-width: 100%;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width:600px){
+    .summaryWrapper{
+        padding: 16px;
+    }
+    .summaryWrapper aside button{
+        padding:16px 8px;
+        font-size: var(--heading-S);
+    }
+    .summaryWrapper h2{
+        font-size:var(--heading-L);
+    }
+    .summary, .summary h1{
+        font-size: var(--heading-S);
+    }
+    .resultCard{
+        padding: 1rem;
+        gap:20px;
+    }
+    .categoryResult{
+        font-size:var(--heading-M);
+    }
+    .summaryWrapper aside{
+        gap:1rem;
+    }
+    
+}
