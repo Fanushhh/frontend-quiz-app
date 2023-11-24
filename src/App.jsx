@@ -9,10 +9,13 @@ import { MotionConfig } from "framer-motion";
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { status } = useContext(QuizContext);
-
+  document.body.style.backgroundColor = isDarkMode ? 'var(--dark-blue)' : 'var(--light-gray)';
+  document.body.style.color = isDarkMode ? 'var(--white)' : 'var(--very-dark-blue)';
+  document.body.style.backgroundImage = isDarkMode ? "url('./images/pattern-background-desktop-dark.svg')" : "url('./images/pattern-background-desktop-light.svg')";
+  
   return (
     <MotionConfig reducedMotion="user">
-    <main style={{backgroundColor: isDarkMode ? 'var(--dark-blue)' : ''}}>
+    <main>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       {status === "playing" ? (
         <Quiz />
