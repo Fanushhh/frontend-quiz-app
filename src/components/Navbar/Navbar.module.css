@@ -58,10 +58,13 @@ nav{
     }
 }
 @media screen and (max-width: 600px){
+    .heroWrapper{
+        gap:0;
+    }
     .darkModeWrapper{
-        margin:40px auto;
-        padding: 0 16px;
-        margin:16px auto;
+        
+        padding:0;
+        margin:0 auto;
     }
     .categoryWrapper{
         font-size:18px;

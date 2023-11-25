@@ -148,6 +148,7 @@ img{
 @media screen and (max-width:600px) {
     .heroWrapper{
         padding:16px;
+        gap:0;
     }
     .heading{
         font-size:var(--heading-S);
