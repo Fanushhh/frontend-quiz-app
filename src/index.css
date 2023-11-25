@@ -19,10 +19,13 @@
 
 :root{
   --violet:#A729F5;
-  --dark-blue:#313E51;
-  --saturated-blue:#3B4D66;
+  --background:#F4f6fa;
+  --accent:#FFFFFF;
   --gray:#626C7F;
-  --light-blue:#ABC1E1;
+  --image:url('./images/pattern-background-desktop-light.svg');
+  --pattern:url('./images/pattern-background-desktop-light.svg');
+  --text:#ABC1E1;
+  --text-secondary:#626C7F;
   --light-gray:#F4f6fa;
   --white:#FFFFFF;
   --green:#26d782;
@@ -37,6 +40,18 @@
   --css:#E0FDEF;
   --javascript:#EBF0FF;
   --accessibility:#F6E7FF;
+}
+[data-theme='light']{
+  --background:#F4f6fa;
+  --accent:#ffffff;
+  --text:#626C7F;
+  --pattern:url('./images/pattern-background-desktop-light.svg');
+}
+[data-theme='dark']{
+  --background:#313E51;
+  --accent:#3B4D66;
+  --text:#ffffff;
+  --pattern:url('./images/pattern-background-desktop-dark.svg');
 }
 
 /*
@@ -57,14 +72,9 @@
   4. Improve text rendering
 */
 body {
+  overflow: hidden;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  
-  background-image: url('../public/images/pattern-background-desktop-light.svg');
-  background-color: var(--light-gray);
-  background-repeat: no-repeat;
-  background-size: cover;
   font-family: 'Rubik Regular', sans-serif;
 }
 /*
@@ -101,5 +111,25 @@ button{
   cursor: pointer;
   border:3px solid transparent;
 }
+@media screen and (max-width:1000px){
+  :root{
+    --pattern: url('./images/pattern-background-tablet-light.svg');
+  }
+  [data-theme='dark']{
+    --pattern: url('./images/pattern-background-tablet-dark.svg');
+  }
+  
+}
+
+@media screen and (max-width:600px){
+  :root{
+    --pattern: url('./images/pattern-background-mobile-light.svg');
+  }
+  [data-theme='dark']{
+    --pattern: url('./images/pattern-background-mobile-dark.svg');
+  }
+  
+}
+
 
 

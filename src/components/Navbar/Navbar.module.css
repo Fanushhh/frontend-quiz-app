@@ -63,6 +63,9 @@ nav{
         padding: 0 16px;
         margin:16px auto;
     }
+    .categoryWrapper{
+        font-size:18px;
+    }
     .nav{
         padding:16px;
         

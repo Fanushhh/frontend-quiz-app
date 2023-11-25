@@ -2,9 +2,10 @@ import React from "react";
 import { QuizContext } from "../QuizProvider/QuizProvider";
 import styles from "./Summary.module.css";
 import VisuallyHidden from "../VisuallyHidden";
+import Fireworks from "../Fireworks/index";
 
 function Summary() {
-  const { score,setStatus, category, setCategory, setScore, setCurrentQuestion, setCurrentQuiz } = React.useContext(QuizContext);
+  const { score,setStatus, category, setCategory, setScore, setCurrentQuestion, setCurrentQuiz, isDarkMode } = React.useContext(QuizContext);
   function resetQuiz(){
     setCategory("");
     setScore(0);
@@ -35,6 +36,7 @@ function Summary() {
          <VisuallyHidden>Play again</VisuallyHidden> 
         </button>
       </aside>
+      {score >= 7 && <Fireworks />}
     </section>
   );
 }

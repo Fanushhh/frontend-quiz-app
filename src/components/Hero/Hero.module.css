@@ -29,7 +29,7 @@
 }
 
 .categoryWrapper{
-    background-color:var(--white);
+    background-color:var(--accent);
     display: flex;
     align-items: center;
     gap:1rem;

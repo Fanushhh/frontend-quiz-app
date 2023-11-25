@@ -14,11 +14,12 @@ function Quiz() {
     score,
   } = React.useContext(QuizContext);
   const answerInputRef = React.useRef("");
-
+  const answerRef = React.useRef(null);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [error, setError] = React.useState(false);
   if (!currentQuiz.length) return null;
 
+ 
   const { question, options, answer } =
     currentQuiz[0].questions[currentQuestion];
 
@@ -56,7 +57,7 @@ function Quiz() {
         <div className={styles.progressBar}>
           <motion.div
             className={styles.progress}
-            animate={{ width: `${(currentQuestion + 1) * 10}%` }}
+            animate={{ width: `${(currentQuestion) * 10}%` }}
           ></motion.div>
         </div>
       </div>
@@ -65,6 +66,7 @@ function Quiz() {
           return (
             <div key={crypto.randomUUID()}>
               <button
+              ref={answerRef}
               style={{borderColor: isSubmitted && answer === option ? 'var(--green)' : isSubmitted && answerInputRef.current === option ? 'var(--red)' : ''}}
                 className={styles.categoryWrapper}
                 onClick={() => {
@@ -87,7 +89,7 @@ function Quiz() {
           );
         })}
         <div className={styles.submitWrapper}>
-          <button onClick={handleSubmit} className={styles.submitButton}>
+          <button disabled={isSubmitted} onClick={handleSubmit} className={styles.submitButton}>
             Submit answer
           </button>
           {error && <div className={styles.errorContainer}>

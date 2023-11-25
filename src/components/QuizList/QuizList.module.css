@@ -6,7 +6,8 @@
 }
 
 .categoryWrapper{
-    background-color:var(--white);
+    background-color:var(--accent);
+    color:var(--text);
     display: flex;
     align-items: center;
     gap:1rem;
@@ -54,6 +55,7 @@ img{
     }
     .categoryWrapper{
         width: 100%;
+        padding:12px;
     }
     
 }

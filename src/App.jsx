@@ -6,25 +6,32 @@ import Quiz from "./components/Quiz/index";
 import { QuizContext } from "./components/QuizProvider/QuizProvider";
 import Summary from "./components/Summary/index";
 import { MotionConfig } from "framer-motion";
+import useLocalStorage from "use-local-storage";
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  
   const { status } = useContext(QuizContext);
-  document.body.style.backgroundColor = isDarkMode ? 'var(--dark-blue)' : 'var(--light-gray)';
-  document.body.style.color = isDarkMode ? 'var(--white)' : 'var(--very-dark-blue)';
-  document.body.style.backgroundImage = isDarkMode ? "url('./images/pattern-background-desktop-dark.svg')" : "url('./images/pattern-background-desktop-light.svg')";
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+  console.log(theme)
+  function switchTheme(){
+    setTheme(theme === "light" ? "dark" : "light");
+  }
+  document.body.dataset.theme = theme;
   
   return (
     <MotionConfig reducedMotion="user">
-    <main>
-      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      {status === "playing" ? (
-        <Quiz />
-      ) : status === "finished" ? (
-        <Summary />
-      ) : (
-        <Hero />
-      )}
-    </main>
+    <div className={styles.app} data-theme={theme}>
+      <main >
+        <Navbar theme={theme} switchTheme={switchTheme} />
+        {status === "playing" ? (
+          <Quiz />
+        ) : status === "finished" ? (
+          <Summary />
+        ) : (
+          <Hero />
+        )}
+      </main>
+    </div>
     </MotionConfig>
   );
 }
