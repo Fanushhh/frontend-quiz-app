@@ -76,12 +76,12 @@ function Quiz() {
                 <p className={styles.orderedOption}>{alphabet[index]}</p>
                 <h2>{option}</h2>
                 {isSubmitted && answer === option && (
-                  <img src="./images/icon-correct.svg" alt="answer" />
+                  <img src="./images/icon-correct.svg" alt="feedback icon for the answer" />
                 )}
                 {answerInputRef.current === option &&
                   isSubmitted &&
                   answer !== option && (
-                    <img src="./images/icon-incorrect.svg" alt="answer" />
+                    <img src="./images/icon-incorrect.svg" alt="feedback icon for the answer" />
                   )}
               </button>
               <VisuallyHidden>{option}</VisuallyHidden>
@@ -93,7 +93,7 @@ function Quiz() {
             Submit answer
           </button>
           {error && <div className={styles.errorContainer}>
-          <img src="./images/icon-error.svg" />
+          <img src="./images/icon-error.svg" alt="error icon if no option is selected"/>
             <p className={styles.error}>Please select an answer</p>
           </div>}
         </div>

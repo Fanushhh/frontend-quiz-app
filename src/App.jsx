@@ -11,8 +11,8 @@ function App() {
   
   const { status } = useContext(QuizContext);
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
-  console.log(theme)
+  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'light' : 'dark');
+  
   function switchTheme(){
     setTheme(theme === "light" ? "dark" : "light");
   }
