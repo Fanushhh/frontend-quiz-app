@@ -22,8 +22,8 @@
   --background:#F4f6fa;
   --accent:#FFFFFF;
   --gray:#626C7F;
-  --image:url('./public//images/pattern-background-desktop-light.svg');
-  --pattern:url('./public//images/pattern-background-desktop-light.svg');
+  --image:url('./images/pattern-background-desktop-light.svg');
+  --pattern:url('./images/pattern-background-desktop-light.svg');
   --text:#ABC1E1;
   --text-secondary:#626C7F;
   --light-gray:#F4f6fa;
@@ -45,13 +45,13 @@
   --background:#F4f6fa;
   --accent:#ffffff;
   --text:#626C7F;
-  --pattern:url('./public/images/pattern-background-desktop-light.svg');
+  --pattern:url('./images/pattern-background-desktop-light.svg');
 }
 [data-theme='dark']{
   --background:#313E51;
   --accent:#3B4D66;
   --text:#ffffff;
-  --pattern:url('./public/images/pattern-background-desktop-dark.svg');
+  --pattern:url('./images/pattern-background-desktop-dark.svg');
 }
 
 /*
@@ -113,7 +113,7 @@ button{
 }
 @media screen and (max-width:1000px){
   :root{
-    --pattern: url('./public/images/pattern-background-tablet-light.svg');
+    --pattern: url('./images/pattern-background-tablet-light.svg');
   }
   [data-theme='dark']{
     --pattern: url('./public/images/pattern-background-tablet-dark.svg');
@@ -123,10 +123,10 @@ button{
 
 @media screen and (max-width:600px){
   :root{
-    --pattern: url('./public/images/pattern-background-mobile-light.svg');
+    --pattern: url('./images/pattern-background-mobile-light.svg');
   }
   [data-theme='dark']{
-    --pattern: url('./public/images/pattern-background-mobile-dark.svg');
+    --pattern: url('./images/pattern-background-mobile-dark.svg');
   }
   
 }
