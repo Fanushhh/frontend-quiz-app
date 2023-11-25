@@ -17,7 +17,7 @@ function App() {
     setTheme(theme === "light" ? "dark" : "light");
   }
   document.body.dataset.theme = theme;
-  
+  document.body.style.overflow = status === "finished" ? 'hidden' : 'auto';
   return (
     <MotionConfig reducedMotion="user">
     <div className={styles.app} data-theme={theme}>
