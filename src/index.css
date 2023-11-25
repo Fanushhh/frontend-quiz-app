@@ -72,7 +72,7 @@
   4. Improve text rendering
 */
 body {
-  overflow: hidden;
+  
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: 'Rubik Regular', sans-serif;

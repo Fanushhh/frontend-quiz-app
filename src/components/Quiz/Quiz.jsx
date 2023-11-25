@@ -72,6 +72,7 @@ function Quiz() {
                 onClick={() => {
                   answerInputRef.current = option;
                 }}
+                
               >
                 <p className={styles.orderedOption}>{alphabet[index]}</p>
                 <h2>{option}</h2>
